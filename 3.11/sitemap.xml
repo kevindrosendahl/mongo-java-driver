@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/mongo-java-driver/3.11/driver-async/tutorials/client-side-encryption/</loc>
+    <lastmod>2019-06-13T09:00:01+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/mongo-java-driver/3.11/driver/tutorials/client-side-encryption/</loc>
     <lastmod>2019-06-13T09:00:01+01:00</lastmod>
   </url>

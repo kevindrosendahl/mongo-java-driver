@@ -2,9 +2,10 @@
 <html lang="en">
   <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="">
-<meta name="keyword" content="">
+<meta name="description" content="MongoDB Java Driver documentation">
+<meta name="author" content="MongoDB Drivers Team">
+<meta name="keyword" content="MongoDB, Java, JVM, NoSQL, Document Database">
+<meta name="date" content="2019-07-25T11:19:16.46">
 <link rel="shortcut icon" href="/mongo-java-driver/3.11/img/favicon.png">
 
     <title>Client Side Encryption</title><link rel="stylesheet" href="/mongo-java-driver/3.11/lib/bootstrap.css" type="text/css" />
@@ -152,6 +153,8 @@
     <a href="/mongo-java-driver/3.11/driver-async/tutorials/bulk-writes/"><i class='fa'></i>Bulk Writes</a>
   </li></ul>
   </li><li class="toctree-l3">
+    <a href="/mongo-java-driver/3.11/driver-async/tutorials/client-side-encryption/"><i class='fa fa-lock'></i>Client Side Encryption</a>
+  </li><li class="toctree-l3">
     <a href="/mongo-java-driver/3.11/driver-async/tutorials/aggregation/"><i class='fa'></i>Aggregation</a>
   </li><li class="toctree-l3">
     <a href="/mongo-java-driver/3.11/driver-async/tutorials/change-streams/"><i class='fa'></i>Change Streams</a>
@@ -287,7 +290,8 @@ See the <a href="/mongo-java-driver/3.11/driver/getting-started/installation/">i
     &lt;dependency&gt;
         &lt;groupId&gt;org.mongodb&lt;/groupId&gt;
         &lt;artifactId&gt;mongodb-crypt&lt;/artifactId&gt;
-        &lt;version&gt;1.0.0-beta1&lt;/version&gt;&lt;/dependency&gt;
+        &lt;version&gt;1.0.0-beta4&lt;/version&gt;
+    &lt;/dependency&gt;
 &lt;/dependencies&gt;
 
 </code></pre>
@@ -295,169 +299,70 @@ See the <a href="/mongo-java-driver/3.11/driver/getting-started/installation/">i
 <section class="gradle hidden">
 <pre><code>
   dependencies {
-      compile 'org.mongodb:mongodb-crypt:1.0.0-beta1'
+      compile 'org.mongodb:mongodb-crypt:1.0.0-beta4'
   }
 
 </code></pre>
 </section>
 <section class="downloadInfo small">
     <p><strong>Note:</strong> You can also download the <code>mongodb-crypt</code> jar
-        <a href="https://oss.sonatype.org/content/repositories/releases/org/mongodb/mongodb-crypt/1.0.0-beta1" target="_blank">directly</a>
+        <a href="https://oss.sonatype.org/content/repositories/releases/org/mongodb/mongodb-crypt/1.0.0-beta4" target="_blank">directly</a>
         from sonatype.</a></p></section>
-
-<p>If the jar fails to run there are separate jar files for specific architectures:</p>
-
-<h4 id="rhel-7-0">RHEL 7.0*</h4>
-
-<section class="maven">
-<pre><code class="ini">
-&lt;dependencies&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;org.mongodb&lt;/groupId&gt;
-        &lt;artifactId&gt;mongodb-crypt&lt;/artifactId&gt;
-        &lt;version&gt;1.0.0-beta1&lt;/version&gt;<classifier>linux64-rhel70</classifier>&lt;/dependency&gt;
-&lt;/dependencies&gt;
-
-</code></pre>
-</section>
-<section class="gradle hidden">
-<pre><code>
-  dependencies {
-      compile 'org.mongodb:mongodb-crypt:1.0.0-beta1:linux64-rhel70'
-  }
-
-</code></pre>
-</section>
-<section class="downloadInfo small">
-    <p><strong>Note:</strong> You can also download the <code>mongodb-crypt</code> jar
-        <a href="https://oss.sonatype.org/content/repositories/releases/org/mongodb/mongodb-crypt/1.0.0-beta1" target="_blank">directly</a>
-        from sonatype.</a></p></section>
-
-<h4 id="osx">OSX*</h4>
-
-<section class="maven">
-<pre><code class="ini">
-&lt;dependencies&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;org.mongodb&lt;/groupId&gt;
-        &lt;artifactId&gt;mongodb-crypt&lt;/artifactId&gt;
-        &lt;version&gt;1.0.0-beta1&lt;/version&gt;<classifier>osx</classifier>&lt;/dependency&gt;
-&lt;/dependencies&gt;
-
-</code></pre>
-</section>
-<section class="gradle hidden">
-<pre><code>
-  dependencies {
-      compile 'org.mongodb:mongodb-crypt:1.0.0-beta1:osx'
-  }
-
-</code></pre>
-</section>
-<section class="downloadInfo small">
-    <p><strong>Note:</strong> You can also download the <code>mongodb-crypt</code> jar
-        <a href="https://oss.sonatype.org/content/repositories/releases/org/mongodb/mongodb-crypt/1.0.0-beta1" target="_blank">directly</a>
-        from sonatype.</a></p></section>
-
-<h4 id="windows">Windows*</h4>
-
-<section class="maven">
-<pre><code class="ini">
-&lt;dependencies&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;org.mongodb&lt;/groupId&gt;
-        &lt;artifactId&gt;mongodb-crypt&lt;/artifactId&gt;
-        &lt;version&gt;1.0.0-beta1&lt;/version&gt;<classifier>win64</classifier>&lt;/dependency&gt;
-&lt;/dependencies&gt;
-
-</code></pre>
-</section>
-<section class="gradle hidden">
-<pre><code>
-  dependencies {
-      compile 'org.mongodb:mongodb-crypt:1.0.0-beta1:win64'
-  }
-
-</code></pre>
-</section>
-<section class="downloadInfo small">
-    <p><strong>Note:</strong> You can also download the <code>mongodb-crypt</code> jar
-        <a href="https://oss.sonatype.org/content/repositories/releases/org/mongodb/mongodb-crypt/1.0.0-beta1" target="_blank">directly</a>
-        from sonatype.</a></p></section>
-
-<h4 id="ubuntu-16-04">Ubuntu 16.04</h4>
-
-<section class="maven">
-<pre><code class="ini">
-&lt;dependencies&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;org.mongodb&lt;/groupId&gt;
-        &lt;artifactId&gt;mongodb-crypt&lt;/artifactId&gt;
-        &lt;version&gt;1.0.0-beta1&lt;/version&gt;<classifier>linux64-ubuntu1604</classifier>&lt;/dependency&gt;
-&lt;/dependencies&gt;
-
-</code></pre>
-</section>
-<section class="gradle hidden">
-<pre><code>
-  dependencies {
-      compile 'org.mongodb:mongodb-crypt:1.0.0-beta1:linux64-ubuntu1604'
-  }
-
-</code></pre>
-</section>
-<section class="downloadInfo small">
-    <p><strong>Note:</strong> You can also download the <code>mongodb-crypt</code> jar
-        <a href="https://oss.sonatype.org/content/repositories/releases/org/mongodb/mongodb-crypt/1.0.0-beta1" target="_blank">directly</a>
-        from sonatype.</a></p></section>
-
-<ul>
-<li>Distribution is included in the main <code>mongodb-crypt</code> jar file.</li>
-</ul>
 
 <h3 id="mongocryptd-configuration">mongocryptd configuration</h3>
 
 <p><code>libmongocrypt</code> requires the <code>mongocryptd</code> daemon / process to be running. A specific daemon / process uri can be configured in the
 <code>AutoEncryptionSettings</code> class by setting <code>mongocryptdURI</code> in the <code>extraOptions</code>.</p>
 
-<p>More information about libmongocrypt will soon be available from the official documentation.</p>
+<p>More information about mongocryptd will soon be available from the official documentation.</p>
 
 <h3 id="examples">Examples</h3>
 
-<p>The following is a sample app that assumes key and schema have already been created in MongoDB. The example uses a local key,
+<p>The following is a sample app that assumes the <strong>key</strong> and <strong>schema</strong> have already been created in MongoDB. The example uses a local key,
 however using AWS Key Management Service is also an option. The data in the <code>encryptedField</code> field is automatically encrypted on the
-insert and decrypted when using find on the client side:</p>
+insert and decrypted when using find on the client side. The following code snippet comes from the
+<a href="https://github.com/mongodb/mongo-java-driver/blob/master/driver-sync/src/examples/tour/ClientSideEncryptionSimpleTour.java
+"><code>ClientSideEncryptionSimpleTour.java</code></a> example code
+that can be found with the driver source on github:</p>
 
 <pre><code class="language-java">import com.mongodb.AutoEncryptionSettings;
 import com.mongodb.MongoClientSettings;
+import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
 import org.bson.Document;
 
 import java.security.SecureRandom;
+import java.util.HashMap;
 import java.util.Map;
 
-public class ClientSideEncryptionSimpleTest {
+public class ClientSideEncryptionSimpleTour {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 
         // This would have to be the same master key as was used to create the encryption key
-        var localMasterKey = new byte[96];
+        final byte[] localMasterKey = new byte[96];
         new SecureRandom().nextBytes(localMasterKey);
 
-        var kmsProviders = Map.of(&quot;local&quot;, Map.&lt;String, Object&gt;of(&quot;key&quot;, localMasterKey));
-        var keyVaultNamespace = &quot;admin.datakeys&quot;;
+        Map&lt;String, Map&lt;String, Object&gt;&gt; kmsProviders = new HashMap&lt;String, Map&lt;String, Object&gt;&gt;() {{
+           put(&quot;local&quot;, new HashMap&lt;String, Object&gt;() {{
+               put(&quot;key&quot;, localMasterKey);
+           }});
+        }};
 
-        var autoEncryptionSettings = AutoEncryptionSettings.builder()
-            .keyVaultNamespace(keyVaultNamespace)
-            .kmsProviders(kmsProviders)
-            .build();
+        String keyVaultNamespace = &quot;admin.datakeys&quot;;
 
-        var clientSettings = MongoClientSettings.builder()
-            .autoEncryptionSettings(autoEncryptionSettings)
-            .build();
+        AutoEncryptionSettings autoEncryptionSettings = AutoEncryptionSettings.builder()
+                .keyVaultNamespace(keyVaultNamespace)
+                .kmsProviders(kmsProviders)
+                .build();
 
-        var client = MongoClients.create(clientSettings);
-        var collection = client.getDatabase(&quot;test&quot;).getCollection(&quot;coll&quot;);
+        MongoClientSettings clientSettings = MongoClientSettings.builder()
+                .autoEncryptionSettings(autoEncryptionSettings)
+                .build();
+
+        MongoClient mongoClient = MongoClients.create(clientSettings);
+        MongoCollection&lt;Document&gt; collection = mongoClient.getDatabase(&quot;test&quot;).getCollection(&quot;coll&quot;);
         collection.drop(); // Clear old data
 
         collection.insertOne(new Document(&quot;encryptedField&quot;, &quot;123456789&quot;));
@@ -474,17 +379,25 @@ public class ClientSideEncryptionSimpleTest {
 </div>
 
 
-<p>The following example shows how to configure the <code>AutoEncryptionSettings</code> instance to create a new key and setting the json schema map:</p>
+<p>The following example shows how to configure the <code>AutoEncryptionSettings</code> instance to create a new key and setting the json schema map.
+The full code snippet can be found in
+<a href="https://github.com/mongodb/mongo-java-driver/blob/master/driver-sync/src/examples/tour/ClientSideEncryptionAutoEncryptionSettingsTour.java
+"><code>ClientSideEncryptionAutoEncryptionSettingsTour.java</code></a>:</p>
 
-<pre><code class="language-java">import com.mongodb.ConnectionString;
-import com.mongodb.ClientEncryptionSettings;
+<pre><code class="language-java">import com.mongodb.ClientEncryptionSettings;
+import com.mongodb.ConnectionString;
+import com.mongodb.client.model.vault.DataKeyOptions;
+import com.mongodb.client.vault.ClientEncryption;
 import com.mongodb.client.vault.ClientEncryptions;
+import org.bson.BsonBinary;
+import org.bson.BsonDocument;
+
+import java.util.Base64;
 
 ...
 
-
-var keyVaultNamespace = &quot;admin.datakeys&quot;;
-var clientEncryptionSettings = ClientEncryptionSettings.builder()
+String keyVaultNamespace = &quot;admin.datakeys&quot;;
+ClientEncryptionSettings clientEncryptionSettings = ClientEncryptionSettings.builder()
         .keyVaultMongoClientSettings(MongoClientSettings.builder()
                 .applyConnectionString(new ConnectionString(&quot;mongodb://localhost&quot;))
                 .build())
@@ -492,43 +405,37 @@ var clientEncryptionSettings = ClientEncryptionSettings.builder()
         .kmsProviders(kmsProviders)
         .build();
 
-var clientEncryption = ClientEncryptions.create(clientEncryptionSettings);
-var dataKeyId = keyVault.createDataKey(&quot;local&quot;, new DataKeyOptions());
-var base64DataKeyId = Base64.getEncoder().encodeToString(dataKeyId.getData());
+ClientEncryption clientEncryption = ClientEncryptions.create(clientEncryptionSettings);
+BsonBinary dataKeyId = clientEncryption.createDataKey(&quot;local&quot;, new DataKeyOptions());
+final String base64DataKeyId = Base64.getEncoder().encodeToString(dataKeyId.getData());
 
-var dbName = &quot;test&quot;;
-var collName = &quot;coll&quot;;
-var autoEncryptionSettings = AutoEncryptionSettings.builder()
-    .keyVaultNamespace(keyVaultNamespace)
-    .kmsProviders(kmsProviders)
-    .namespaceToLocalSchemaDocumentMap(Map.of(dbName + &quot;.&quot; + collName,
-        // Need a schema that references the new data key
-        BsonDocument.parse(&quot;{&quot; +
-                &quot;  properties: {&quot; +
-                &quot;    encryptedField: {&quot; +
-                &quot;      encrypt: {&quot; +
-                &quot;        keyId: [{&quot; +
-                &quot;          \&quot;$binary\&quot;: {&quot; +
-                &quot;            \&quot;base64\&quot;: \&quot;&quot; + base64DataKeyId + &quot;\&quot;,&quot; +
-                &quot;            \&quot;subType\&quot;: \&quot;04\&quot;&quot; +
-                &quot;          }&quot; +
-                &quot;        }],&quot; +
-                &quot;        bsonType: \&quot;string\&quot;,&quot; +
-                &quot;        algorithm: \&quot;AEAD_AES_256_CBC_HMAC_SHA_512-Deterministic\&quot;&quot; +
-                &quot;      }&quot; +
-                &quot;    }&quot; +
-                &quot;  },&quot; +
-                &quot;  \&quot;bsonType\&quot;: \&quot;object\&quot;&quot; +
-                &quot;}&quot;))
-    ).build();
+final String dbName = &quot;test&quot;;
+final String collName = &quot;coll&quot;;
+AutoEncryptionSettings autoEncryptionSettings = AutoEncryptionSettings.builder()
+        .keyVaultNamespace(keyVaultNamespace)
+        .kmsProviders(kmsProviders)
+        .schemaMap(new HashMap&lt;String, BsonDocument&gt;() {{
+            put(dbName + &quot;.&quot; + collName,
+                    // Need a schema that references the new data key
+                    BsonDocument.parse(&quot;{&quot;
+                            + &quot;  properties: {&quot;
+                            + &quot;    encryptedField: {&quot;
+                            + &quot;      encrypt: {&quot;
+                            + &quot;        keyId: [{&quot;
+                            + &quot;          \&quot;$binary\&quot;: {&quot;
+                            + &quot;            \&quot;base64\&quot;: \&quot;&quot; + base64DataKeyId + &quot;\&quot;,&quot;
+                            + &quot;            \&quot;subType\&quot;: \&quot;04\&quot;&quot;
+                            + &quot;          }&quot;
+                            + &quot;        }],&quot;
+                            + &quot;        bsonType: \&quot;string\&quot;,&quot;
+                            + &quot;        algorithm: \&quot;AEAD_AES_256_CBC_HMAC_SHA_512-Deterministic\&quot;&quot;
+                            + &quot;      }&quot;
+                            + &quot;    }&quot;
+                            + &quot;  },&quot;
+                            + &quot;  \&quot;bsonType\&quot;: \&quot;object\&quot;&quot;
+                            + &quot;}&quot;));
+        }}).build();
 </code></pre>
-
-<div class="admonition note">
-<h5 class="admonition-title">Note</h5>
-<p>Auto encryption is an <strong>enterprise</strong> only feature.</p>
-
-</div>
-
 
 <p><strong>Coming soon:</strong> An example using the community version and demonstrating explicit encryption/decryption.</p>
 <div id="btnv"><div class="pull-left">
@@ -547,13 +454,7 @@ var autoEncryptionSettings = AutoEncryptionSettings.builder()
 <ul>
 <li><a href="#installation">Installation</a>
 <ul>
-<li><a href="#libmongocrypt">libmongocrypt</a>
-<ul>
-<li><a href="#rhel-7-0">RHEL 7.0*</a></li>
-<li><a href="#osx">OSX*</a></li>
-<li><a href="#windows">Windows*</a></li>
-<li><a href="#ubuntu-16-04">Ubuntu 16.04</a></li>
-</ul></li>
+<li><a href="#libmongocrypt">libmongocrypt</a></li>
 <li><a href="#mongocryptd-configuration">mongocryptd configuration</a></li>
 <li><a href="#examples">Examples</a></li>
 </ul></li>

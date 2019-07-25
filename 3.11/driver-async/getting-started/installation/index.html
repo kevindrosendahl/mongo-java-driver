@@ -2,9 +2,10 @@
 <html lang="en">
   <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="">
-<meta name="keyword" content="">
+<meta name="description" content="MongoDB Java Driver documentation">
+<meta name="author" content="MongoDB Drivers Team">
+<meta name="keyword" content="MongoDB, Java, JVM, NoSQL, Document Database">
+<meta name="date" content="2019-07-25T11:19:16.71">
 <link rel="shortcut icon" href="/mongo-java-driver/3.11/img/favicon.png">
 
     <title>Installation</title><link rel="stylesheet" href="/mongo-java-driver/3.11/lib/bootstrap.css" type="text/css" />
@@ -152,6 +153,8 @@
     <a href="/mongo-java-driver/3.11/driver-async/tutorials/bulk-writes/"><i class='fa'></i>Bulk Writes</a>
   </li></ul>
   </li><li class="toctree-l3">
+    <a href="/mongo-java-driver/3.11/driver-async/tutorials/client-side-encryption/"><i class='fa fa-lock'></i>Client Side Encryption</a>
+  </li><li class="toctree-l3">
     <a href="/mongo-java-driver/3.11/driver-async/tutorials/aggregation/"><i class='fa'></i>Aggregation</a>
   </li><li class="toctree-l3">
     <a href="/mongo-java-driver/3.11/driver-async/tutorials/change-streams/"><i class='fa'></i>Change Streams</a>
@@ -284,7 +287,8 @@ When TLS/SSL is enabled, the MongoDB Async Driver requires either <a href="http:
     &lt;dependency&gt;
         &lt;groupId&gt;org.mongodb&lt;/groupId&gt;
         &lt;artifactId&gt;mongodb-driver-async&lt;/artifactId&gt;
-        &lt;version&gt;3.11.0-beta4&lt;/version&gt;&lt;/dependency&gt;
+        &lt;version&gt;3.11.0-rc0&lt;/version&gt;
+    &lt;/dependency&gt;
 &lt;/dependencies&gt;
 
 </code></pre>
@@ -292,19 +296,19 @@ When TLS/SSL is enabled, the MongoDB Async Driver requires either <a href="http:
 <section class="gradle hidden">
 <pre><code>
   dependencies {
-      compile 'org.mongodb:mongodb-driver-async:3.11.0-beta4'
+      compile 'org.mongodb:mongodb-driver-async:3.11.0-rc0'
   }
 
 </code></pre>
 </section>
 <section class="downloadInfo small">
     <p><strong>Note:</strong> You can also download the <code>mongodb-driver-async</code> jar
-        <a href="https://oss.sonatype.org/content/repositories/releases/org/mongodb/mongodb-driver-async/3.11.0-beta4" target="_blank">directly</a>
+        <a href="https://oss.sonatype.org/content/repositories/releases/org/mongodb/mongodb-driver-async/3.11.0-rc0" target="_blank">directly</a>
         from sonatype.</a></p><p>
         If downloading <code>mongodb-driver-async</code> manually,
         you must also download its dependencies:
-        <a href="https://oss.sonatype.org/content/repositories/releases/org/mongodb/bson/3.11.0-beta4" target="_blank"><code>bson</code></a> and
-        <a href="https://oss.sonatype.org/content/repositories/releases/org/mongodb/mongodb-driver-core/3.11.0-beta4" target="_blank"><code>mongodb-driver-core</code></a>
+        <a href="https://oss.sonatype.org/content/repositories/releases/org/mongodb/bson/3.11.0-rc0" target="_blank"><code>bson</code></a> and
+        <a href="https://oss.sonatype.org/content/repositories/releases/org/mongodb/mongodb-driver-core/3.11.0-rc0" target="_blank"><code>mongodb-driver-core</code></a>
     </p></section>
 <div id="btnv"><div class="pull-right">
   <a class="navigation next" href="/mongo-java-driver/3.11/driver-async/getting-started/quick-start/">

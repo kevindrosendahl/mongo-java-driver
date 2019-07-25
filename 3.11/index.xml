@@ -13,6 +13,17 @@
     
     <item>
       <title>Client Side Encryption</title>
+      <link>/mongo-java-driver/3.11/driver-async/tutorials/client-side-encryption/</link>
+      <pubDate>Thu, 13 Jun 2019 09:00:01 +0100</pubDate>
+      
+      <guid>/mongo-java-driver/3.11/driver-async/tutorials/client-side-encryption/</guid>
+      <description>Client Side Encryption New in MongoDB 4.2 client side encryption allows administrators and developers to encrypt specific data fields in addition to other MongoDB encryption features.
+With field level encryption, developers can encrypt fields client side without any server-side configuration or directives. Client-side field level encryption supports workloads where applications must guarantee that unauthorized parties, including server administrators, cannot read the encrypted data.
+important Java 8 is the minimum required version that supports Async client side encryption.</description>
+    </item>
+    
+    <item>
+      <title>Client Side Encryption</title>
       <link>/mongo-java-driver/3.11/driver/tutorials/client-side-encryption/</link>
       <pubDate>Thu, 13 Jun 2019 09:00:01 +0100</pubDate>
       
@@ -714,7 +725,7 @@ There are two Maven artifacts available in the release. The preferred artifact f
       <pubDate>Tue, 17 Mar 2015 15:36:56 +0000</pubDate>
       
       <guid>/mongo-java-driver/3.11/driver-async/</guid>
-      <description>MongoDB Async Java Driver Documentation The following guide provides information on using the callback-based MongoDB Async Java Driver 3.10.
+      <description>MongoDB Async Java Driver Documentation The following guide provides information on using the callback-based MongoDB Async Java Driver 3.11.
 Note The callback-based Async Java Driver has been deprecated in favor of the MongoDB Reactive Streams Java Driver.
  What&amp;rsquo;s New in 3.10 The driver now natively supports TLS/SSL when used with Java 8+.
 What&amp;rsquo;s New in 3.9 The callback-based MongoDB Async Java driver has been deprecated in the 3.9 release.</description>
@@ -726,8 +737,8 @@ What&amp;rsquo;s New in 3.9 The callback-based MongoDB Async Java driver has bee
       <pubDate>Tue, 17 Mar 2015 15:36:56 +0000</pubDate>
       
       <guid>/mongo-java-driver/3.11/driver/</guid>
-      <description>MongoDB Driver 3.10 Documentation The following guide provides information on using the synchronous MongoDB Java Driver 3.10.
-What&amp;rsquo;s New in 3.10 The What&amp;rsquo;s New guide explains the major new features of the driver.
+      <description>MongoDB Driver 3.11 Documentation The following guide provides information on using the synchronous MongoDB Java Driver 3.11.
+What&amp;rsquo;s New in 3.11 The What&amp;rsquo;s New guide explains the major new features of the driver.
 If you are upgrading from the 2.x series of the driver, consult the Upgrading documentation for information on breaking changes.
 Getting Started To get started, see the Installation Guide, the Quick Start Guide and the Quick Start with POJOs Guide.</description>
     </item>
@@ -788,8 +799,8 @@ import com.mongodb.ConnectionString; import com.</description>
       <pubDate>Tue, 17 Mar 2015 15:36:56 +0000</pubDate>
       
       <guid>/mongo-java-driver/3.11/</guid>
-      <description>MongoDB Java Driver Documentation Welcome to the MongoDB Java driver documentation hub for the 3.10 driver release.
-What&amp;rsquo;s New in 3.10 For key new features of 3.10, see What&amp;rsquo;s New.
+      <description>MongoDB Java Driver Documentation Welcome to the MongoDB Java driver documentation hub for the 3.11 driver release.
+What&amp;rsquo;s New in 3.11 For key new features of 3.11, see What&amp;rsquo;s New.
 Upgrade To upgrade, refer to the Upgrade Considerations documentation.
 MongoDB Driver For the synchronous MongoDB Driver, see MongoDB Driver section.
 MongoDB Async Driver For the callback-based asynchronous MongoDB Async Driver, see MongoDB Async Driver section. Note that this driver has been deprecated in favor of the Reactive Streams Java Driver.</description>
